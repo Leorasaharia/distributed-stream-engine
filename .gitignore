@@ -40,3 +40,7 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+*.zip
+.gradle/
+build/
