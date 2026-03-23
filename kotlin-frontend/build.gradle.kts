@@ -15,13 +15,14 @@ repositories {
 dependencies {
     implementation(compose.desktop.currentOs)
     implementation(compose.material)
-    
-    // HTTP Client and JSON parsing
+
     val ktorVersion = "2.3.8"
-    implementation("io.ktor:ktor-client-core:\$ktorVersion")
-    implementation("io.ktor:ktor-client-cio:\$ktorVersion")
-    implementation("io.ktor:ktor-client-content-negotiation:\$ktorVersion")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:\$ktorVersion")
+
+    implementation("io.ktor:ktor-client-core:$ktorVersion")
+    implementation("io.ktor:ktor-client-cio:$ktorVersion")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
     implementation("org.slf4j:slf4j-simple:2.0.12")
 }

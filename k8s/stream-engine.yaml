@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stream-engine
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stream-engine
+  template:
+    metadata:
+      labels:
+        app: stream-engine
+    spec:
+      containers:
+      - name: stream-engine
+        image: stream-engine:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
+          value: "kafka:29092"
+        - name: SPRING_REDIS_HOST
+          value: "redis"
+        - name: SPRING_REDIS_PORT
+          value: "6379"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stream-engine
+spec:
+  selector:
+    app: stream-engine
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30080
+  type: NodePort
