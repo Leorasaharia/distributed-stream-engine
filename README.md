@@ -1,8 +1,5 @@
 # Distributed Stream Processing Engine
 
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 
 > A production-ready, highly scalable streaming engine prototype designed to mimic the core capabilities of **Apache Flink** & **Spark Streaming**.
 
